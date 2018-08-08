@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+jar {   //当然若是我们将此jar包提交给别人使用而不是运行，则当删除或者注释掉此 jar 部分
+    manifest { //配置 Manifest文档属性
+        attributes 'Main-Class': 'Client' //指定程序入口
+    }
+}
+
+group 'com.zx.gradle'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
